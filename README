@@ -1,0 +1,18 @@
+Foundry VTT Module to expose some core 5e settings such there values can be editted.
+
+Currently you can edit:
+Nothing, working on adding a settings menu
+
+Installation
+--------------
+Go to Foundry VTT's "Add-On Module" tab
+Click "Install Module"
+Paste "https://github.com/colton-howe/5e-settings/releases/latest/download/module.json" into the manifest URL
+Hit Install
+
+Directory Structure
+# Templates - HTML Files
+# Scripts - JS Files
+# Styles - CSS Files
+# Packs - Compendium Content
+# Lang - Language & translations Files
