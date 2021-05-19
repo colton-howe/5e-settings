@@ -5,7 +5,7 @@ Hooks.on("ready", () => {
     ui.notifications.error("Module Wound Tracker requires the 'libWrapper' module. Please install and activate it.");
   }
 
-  libWrapper.register("5e-settings", 'game.dnd5e.dice.d20Roll', (wrapped, ...args) => {
+  libWrapper.register("5e-settings", 'game.dnd5e.entities.Item5e.prototype.rollAttack', (wrapped, ...args) => {
     return wrapped({fumble: FUMBLE_VALUE, ...args});
   }, "WRAPPER");
 });
