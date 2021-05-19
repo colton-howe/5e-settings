@@ -1,7 +1,8 @@
 Foundry VTT Module to expose some core 5e settings such there values can be editted.
 
 Currently you can edit:
-Nothing, working on adding a settings menu
+Spell Critical Fail Threshold
+Weapon Critical Fail Threshold
 
 Installation
 --------------
