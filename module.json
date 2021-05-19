@@ -18,6 +18,13 @@
     "scripts": [
         "scripts/5e-settings.js"
     ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        }
+    ],
     "library": true,
 	"url": "https://github.com/colton-howe/5e-settings",
 	"manifest": "https://github.com/colton-howe/5e-settings/releases/latest/download/module.json",

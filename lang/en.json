@@ -1,0 +1,6 @@
+{
+    "DND5E.FlagsWeaponCritFailThreshold": "Melee Critical Fail Hit Threshold",
+    "DND5E.FlagsWeaponCritFailThresholdHint": "An expanded critical fail threshold for weapon attacks.",
+    "DND5E.FlagsSpellCritFailThreshold": "Spell Critical Fail Hit Threshold",
+    "DND5E.FlagsSpellCritFailThresholdHint": "An expanded critical fail threshold for spell attacks."
+}
