@@ -1,8 +1,25 @@
-Hooks.on("ready", () => {
+Hooks.on("setup", () => {
   if(!game.modules.get('lib-wrapper')?.active && game.user.isGM) {
     ui.notifications.error("Module Wound Tracker requires the 'libWrapper' module. Please install and activate it.");
   }
 
+  libWrapper.register("5e-settings", 'CONFIG.Item.entityClass.prototype.rollAttack', function (wrapped, ...args) {
+    const actor = this.actor;
+    const options = {...args[0]};
+    const flags = actor.data.flags.dnd5e;
+
+    //Modify fumble values if needed
+    if (this.type == "weapon" && flags.weaponCritFailThreshold != null) {
+      options.fumble = flags.weaponCritFailThreshold;
+    } else if (this.type == "spell" && flags.spellCritFailThreshold != null) {
+      options.fumble = flags.spellCritFailThreshold;
+    }
+
+    return wrapped(options);
+  }, "MIXED");
+});
+
+Hooks.on("ready", () => {
   CONFIG.DND5E.characterFlags["weaponCritFailThreshold"] = {
     hint: "DND5E.FlagsWeaponCritFailThresholdHint",
     name: "DND5E.FlagsWeaponCritFailThreshold",
@@ -18,19 +35,4 @@ Hooks.on("ready", () => {
     section: "Feats",
     type: Number,
   };
-
-  libWrapper.register("5e-settings", 'game.dnd5e.entities.Item5e.prototype.rollAttack', function (wrapped, ...args) {
-    const actor = this.actor;
-    const options = {...args[0]};
-    const flags = actor.data.flags.dnd5e;
-
-    //Modify fumble values if needed
-    if (this.type == "weapon" && flags.weaponCritFailThreshold != null) {
-      options.fumble = flags.weaponCritFailThreshold;
-    } else if (this.type == "spell" && flags.spellCritFailThreshold != null) {
-      options.fumble = flags.spellCritFailThreshold;
-    }
-
-    return wrapped(options);
-  }, "WRAPPER");
 });
