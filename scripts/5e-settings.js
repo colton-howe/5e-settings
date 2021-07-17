@@ -1,12 +1,18 @@
+if (!game.modules.get('lib-wrapper')?.active && game.user.isGM) {
+  ui.notifications.error("Module Wound Tracker requires the 'libWrapper' module. Please install and activate it.");
+}
+
 Hooks.on("setup", () => {
-  if(!game.modules.get('lib-wrapper')?.active && game.user.isGM) {
-    ui.notifications.error("Module Wound Tracker requires the 'libWrapper' module. Please install and activate it.");
-  }
 
   libWrapper.register("5e-settings", 'CONFIG.Item.entityClass.prototype.rollAttack', function (wrapped, ...args) {
     const actor = this.actor;
     const options = {...args[0]};
     const flags = actor.data.flags.dnd5e;
+
+    //No changes made, return immediately
+    if (flags == null) {
+      return wrapped(options);
+    }
 
     //Modify fumble values if needed
     if (this.type == "weapon" && flags.weaponCritFailThreshold != null) {
@@ -17,6 +23,8 @@ Hooks.on("setup", () => {
 
     return wrapped(options);
   }, "MIXED");
+
+  libWrapper.register
 });
 
 Hooks.on("ready", () => {
