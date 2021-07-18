@@ -16,8 +16,8 @@ const decorateInnerRoll = (inlineRollHtml, rollText) => {
 };
 
 Hooks.on("ready", function() {
-  libWrapper.register("TextEditor._createInlineRoll", (wrapped, ...args) => {
+  libWrapper.register("5e-settings", "TextEditor._createInlineRoll", (wrapped, ...args) => {
     const rollText = args[0];
     return decorateInnerRoll(wrapped(...args), rollText);
-  });
+  }, "MIXED");
 });
