@@ -4,5 +4,5 @@
     "DND5E.FlagsSpellCritFailThreshold": "Spell Critical Fail Threshold",
     "DND5E.FlagsSpellCritFailThresholdHint": "An expanded critical fail threshold for spell attacks.",
     "DND5E.SneakAttackDamage": "Automatic Sneak Attack",
-    "DND5E.SneakAttackDamageHint": "Add an additional roll box for sneak attack damage when attacking with applicable weapons."
+    "DND5E.SneakAttackDamageHint": "Automatically use the Sneak Attack feature if it is present and applicable."
 }

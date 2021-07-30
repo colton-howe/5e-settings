@@ -72,7 +72,11 @@ Hooks.on("setup", () => {
       return wrapped(args[0]);
     }
 
-    const event = args[0].event;
+    const flags = this.actor.data.flags.dnd5e;
+    if (!flags || !flags.sneakAttackDamage) {
+      return wrapped(args[0]);
+    }
+
     const itemData = this.data.data;
 
     //Determines if sneak attack applys based on if the weapon is finesse OR ranged
@@ -86,7 +90,7 @@ Hooks.on("setup", () => {
     if (midiQOLInstalled && game.user.targets.size == 1) {
       const itemWorkflow = MidiQOL.Workflow.getWorkflow(this.id);
       characterCanSneakAttack = false;
-      if (itemWorkflow && itemWorkflow.attackRoll.terms.find(term => term instanceof Die).options.advantage) {
+      if (itemWorkflow && itemWorkflow.attackRoll && itemWorkflow.attackRoll.terms.find(term => term instanceof Die).options.advantage) {
         characterCanSneakAttack = true;
       } else {
         characterCanSneakAttack = characterHasAllyWithin5Feet(game.user);
