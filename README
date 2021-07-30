@@ -4,6 +4,7 @@ Currently you can edit:
 Spell Critical Fail Threshold
 Weapon Critical Fail Threshold
 Descriptions on Inline Rolls
+Automatic Sneak Attack Rolls
 
 Installation
 --------------
@@ -18,3 +19,7 @@ Directory Structure
 # Styles - CSS Files
 # Packs - Compendium Content
 # Lang - Language & translations Files
+
+Ideas to Implement
+--------------
+Ability to add Damage boxes to chat rolls (Sneak Attack, Smite, etc)

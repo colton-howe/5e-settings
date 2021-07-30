@@ -16,6 +16,12 @@ const decorateInnerRoll = (inlineRollHtml, rollText) => {
 };
 
 Hooks.on("ready", function() {
+
+  if (!game.modules.get('lib-wrapper')?.active && game.user.isGM) {
+    //Main module will notify
+    return;
+  }
+  
   libWrapper.register("5e-settings", "TextEditor._createInlineRoll", (wrapped, ...args) => {
     const rollText = args[0];
     return decorateInnerRoll(wrapped(...args), rollText);
