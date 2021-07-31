@@ -4,8 +4,8 @@
     "description": "Module to enable editting of some custom properties in the D&D 5e game system",
     "author": "colton-howe",
     "version": "1.1.0",
-    "minimumCoreVersion": "0.5.0",
-    "compatibleCoreVersion": "0.7.9",
+    "minimumCoreVersion": "0.7.9",
+    "compatibleCoreVersion": "0.8.8",
     "dependencies": [
         {
             "name": "lib-wrapper"
