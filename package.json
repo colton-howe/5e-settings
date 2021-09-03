@@ -1,0 +1,11 @@
+{
+    "name": "5e-settings",
+    "version": "1.0.0",
+    "devDependencies": {
+        "@league-of-foundry-developers/foundry-vtt-types": "^0.8.9-2",
+        "ts-loader": "^9.2.5",
+        "typescript": "^4.4.2",
+        "webpack": "^5.51.2",
+        "webpack-cli": "^4.8.0"
+    }
+}

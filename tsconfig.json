@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "types": ["@league-of-foundry-developers/foundry-vtt-types"],
+      "moduleResolution": "node",
+      "strictNullChecks": true,
+      "outDir": "./dist/",
+      "noImplicitAny": true,
+      "sourceMap": true,
+      "module": "es6",
+      "target": "es5",
+      "jsx": "react",
+      "allowJs": true,
+    }
+}

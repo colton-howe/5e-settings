@@ -5,7 +5,7 @@
     "author": "colton-howe",
     "version": "1.1.1",
     "minimumCoreVersion": "0.7.9",
-    "compatibleCoreVersion": "0.8.8",
+    "compatibleCoreVersion": "0.8.9",
     "dependencies": [
         {
             "name": "lib-wrapper"
@@ -16,9 +16,10 @@
         }
     ],
     "scripts": [
-        "scripts/5e-settings.js",
-        "scripts/descriptive-roll.js",
-        "scripts/flags.js"
+        "dist/bundle.js"
+    ],
+    "esmodules": [
+        "dist/script/index.js"
     ],
     "languages": [
         {
