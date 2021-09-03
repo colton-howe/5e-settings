@@ -1,27 +1,22 @@
-Foundry VTT Module to expose some core 5e settings such there values can be editted.
+## Description
+*Foundry VTT Module to expose some core 5e settings such there values can be editted.*
 
 Currently you can edit:
-Spell Critical Fail Threshold
-Weapon Critical Fail Threshold
-Descriptions on Inline Rolls
-Automatic Sneak Attack Rolls
+- [x] Spell Critical Fail Threshold
+- [x] Weapon Critical Fail Threshold
+- [x] Descriptions on Inline Rolls
+- [x] Automatic Sneak Attack Rolls
 
-Installation
---------------
+## Installation
 Go to Foundry VTT's "Add-On Module" tab
 Click "Install Module"
 Paste "https://github.com/colton-howe/5e-settings/releases/latest/download/module.json" into the manifest URL
 Hit Install
 
-Directory Structure
-# Templates - HTML Files
-# Scripts - JS Files
-# Styles - CSS Files
-# Packs - Compendium Content
-# Lang - Language & translations Files
+## Ideas to Implement
+- [ ] Auto-Prompt Class Features (All but Rogue)
+- [ ] Auto-Prompt Subclass Features (All)
+- [ ] Prompt Spell Prepare on Long Rest
 
-Ideas to Implement
---------------
-Auto-Prompt Class Features (All but Rogue)
-Auto-Prompt Subclass Features (All)
-Prompt Spell Prepare on Long Rest
+## Conflicting Modules
+**BetterRolls5e** - Better Rolls 5e uses its own Util functions to handle rolls, and as of writing this note (September 3rd, 2021), they have hardcoded 1 as their crit fail number. They also use a libWrapper with "OVERRIDE" set to the rolls, so there isn't any way (that I've found) to get in there and change the critical fail thresholds, so those two features will not work if you use BetterRolls5e.
