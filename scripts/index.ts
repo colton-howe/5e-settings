@@ -2,6 +2,7 @@ import DescriptiveRolls from "./descriptive-rolls/DescriptiveRolls";
 import DND5eActorFlags from "./flags/DND5eActorFlags";
 import CritFailThreshold from "./flags/CritFailThreshold";
 import AutoSneakAttack from "./flags/AutoSneakAttack";
+import SpellPreparer from "./long-rest-enhanced/SpellPreparer";
 import { Game, RegisterHook, HookRegistrant } from "./Models";
 import { log } from "./Utils";
 
@@ -9,7 +10,8 @@ const ALL_OVERRIDES: HookRegistrant[] = [
   DescriptiveRolls,
   DND5eActorFlags,
   CritFailThreshold,
-  AutoSneakAttack
+  AutoSneakAttack,
+  SpellPreparer
 ];
 
 Object.values(RegisterHook).forEach(hook => {

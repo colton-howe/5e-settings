@@ -1,5 +1,6 @@
 import { RegisterHook } from "../Models";
 import { HookRegistrant } from "../Models";
+import { MODULE_NAME } from "../Utils";
 
 class DescriptiveRolls implements HookRegistrant {
 
@@ -8,7 +9,7 @@ class DescriptiveRolls implements HookRegistrant {
   }
 
   public register = () => {
-    libWrapper.register("5e-settings", "TextEditor._createInlineRoll", (wrapped, ...args) => {
+    libWrapper.register(MODULE_NAME, "TextEditor._createInlineRoll", (wrapped, ...args) => {
       const rollText: string = String(args[0]);
       return this.decorateInnerRoll(wrapped(...args), rollText);
     }, "MIXED");

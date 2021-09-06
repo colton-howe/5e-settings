@@ -32,6 +32,8 @@ export const characterHasAllyWithin5Feet = (user: User | null) => {
     return foundNearbyToken;
 }
 
+export const MODULE_NAME: string = "5e-settings";
+
 export const log = (msg: string) => {
-  console.log("5e-settings | " + msg);
+  console.log(MODULE_NAME + " | " + msg);
 }

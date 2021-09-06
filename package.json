@@ -2,6 +2,7 @@
     "name": "5e-settings",
     "version": "1.0.0",
     "devDependencies": {
+        "@league-of-foundry-developers/foundry-vtt-dnd5e-types": "^1.3.6-2",
         "@league-of-foundry-developers/foundry-vtt-types": "^0.8.9-2",
         "ts-loader": "^9.2.5",
         "typescript": "^4.4.2",

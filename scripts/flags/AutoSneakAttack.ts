@@ -1,6 +1,6 @@
 import { HookRegistrant, RegisterHook, Game } from "../Models";
 import { DND5eActorSettings } from "./Models";
-import { characterHasAllyWithin5Feet } from "../Utils";
+import { characterHasAllyWithin5Feet, MODULE_NAME } from "../Utils";
 
 let midiQOLInstalled: boolean = false;
 
@@ -16,7 +16,7 @@ class AutoSneakAttack implements HookRegistrant {
       ui.notifications!.warn("Auto sneak attack utilizies some features from the 'midi-qol' module. If you want Sneak Attack to only show up when applicable to targeted actors, install 'midi-qol'");
     }
 
-    libWrapper.register("5e-settings", 'CONFIG.Item.entityClass.prototype.rollDamage', async function (this: Item, wrapped, ...args) {
+    libWrapper.register(MODULE_NAME, 'CONFIG.Item.documentClass.prototype.rollDamage', async function (this: Item, wrapped, ...args) {
       if (this.data.type !== "weapon") {
         //If item isn't a weapon, then don't do anything
         return wrapped(args[0]);

@@ -26,9 +26,18 @@ export interface ExtendedConfig extends CONFIG {
 }
 
 export interface DND5eConfig {
-  [index: string]: Record<string, DND5eValidActorFlags>;
+  [index: string]: Record<string, any>;
   
   characterFlags: Record<string, DND5eValidActorFlags>;
+  spellPreparationModes: DND5eSpellPreperationModes;
+}
+
+export interface DND5eSpellPreperationModes {
+  prepared: "Prepared",
+  pact: "Pact Magic",
+  always: "Always Prepared",
+  atwill: "At-Will",
+  innate: "Innate Spellcasting"
 }
 
 export type DND5eValidActorFlags = DND5eActorStringFlag | DND5eActorNumberFlag | DND5eActorBooleanFlag;
